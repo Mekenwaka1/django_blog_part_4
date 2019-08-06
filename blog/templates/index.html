@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    All Articles
+{% endblock %}
+
+{% block content %}
+    <h1>Home</h1>
+
+    <h2>The current time is {{ current_time }}</h2>
+
+    <h2>List of Articles</h2>
+
+    <ul>
+        {% for article in articles %}
+        <li>
+            <a href="/index/{{ article.pk }}">{{ article.title }} {{ article.author }} {{ article.published_date }}</a>
+        </li>
+        {% endfor %}
+    </ul>   
+
+{% endblock %}
